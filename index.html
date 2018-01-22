@@ -11,20 +11,25 @@
     <div>
       <h1>freeCodeCamp Pomodoro Timer</h1>
       <div class="wrapper">
-        <button class="btn-style">-</button>
-        <button class="btn-style">5</button>
-        <button class="btn-style">+</button>
+        <!--<div class="header-info">
+        header text for break and session time to go in here
+        </div>-->
+        <button id="break-min" class="btn-style">-</button>
+        <button id="break-num" class="btn-style"></button>
+        <button id="break-plus" class="btn-style">+</button>
         <p></p>
-        <button class="btn-style">-</button>
-        <button class="btn-style">25</button>
-        <button class="btn-style">+</button>
+        <button id="session-min" class="btn-style">-</button>
+        <button id="session-num" class="btn-style"></button>
+        <button id="session-plus" class="btn-style">+</button>
       </div>
       <div class="border-box">
-      <p class="timer-text center">30:00</p>
+      <p id="time-window" class="timer-text center"></p>
       </div>
 
     </div>
-    <script src="main.js">
+    <script src="timer.js">
+    </script>
+    <script src="layout.js">
     </script>
   </body>
 </html>
