@@ -1,0 +1,55 @@
+html {
+  background-color: #65909A;
+}
+
+body {
+  padding-top: 30px;
+}
+
+p {
+  text-align: center;
+  font-family: 'Poiret One';
+  color: white;
+  padding: 70px 0;
+  font-size: 50px;
+}
+
+.btn-style {
+  background-color: #65909A;
+  color: white;
+  border-radius: 10px;
+  border: solid 3px white;
+  font-size: 15px;
+  font-family: 'Poiret One', sans-serif;
+  box-shadow: 1px 1px #888888;
+}
+
+button:focus {
+  outline:0;
+}
+
+h1 {
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  display: grid;
+  margin: auto;
+  width: 410px;
+  grid-template-columns: 50px 50px 50px 80px 50px 50px 50px;
+  grid-template-rows: repeat(1, 50px);
+  grid-gap: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.border-box {
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  border: solid 5px white;
+  border-radius: 200px;
+}
