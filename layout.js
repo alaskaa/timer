@@ -22,4 +22,14 @@ document.getElementById("session-min").onclick = () => {
 document.getElementById("session-plus").onclick = () => {
   timer.incrementSession();
   document.getElementById("session-num").innerHTML = timer.sessionNum;
+  timer.incrementCounter();
 }
+
+setInterval(function() {
+  if(timer.sessionTime > 0) {
+    timer.reduceTime();
+    document.getElementById("time-window").innerHTML = timer.sessionTime;
+  } else {
+    clearInterval();
+  }
+},1000);
