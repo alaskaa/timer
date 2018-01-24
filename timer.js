@@ -1,28 +1,40 @@
 class Timer {
 
   constructor() {
-    // initialise variables here
-    var date = new Date('July 31, 91 00:30:00 GMT+00:00');
-    //var timerStart = (date.getMinutes()+":"+date.getSeconds()+0);
-    var timerStart = 30;
-    this.sessionTime = timerStart;
     this.breakNum = 5;
-    this.sessionNum = 25;
-    this.toZero = 0;
+    this.sessionNum = 30;
+
+    this.minutes = 29;
+    this.seconds = 59;
   }
 
-  reduceTime () {
-    this.sessionTime--;
-    console.log('hi');
+  reduceTime() {
+    let m = this.minutes;
+    let s = this.seconds;
+    setInterval(function(){
+      console.log(this.minutes);
+      document.getElementById("time-window").innerHTML = m + ":" + s;
+        s--;
+        if(s == -1) {
+          m--;
+          s = 59;
+          if (m == 0) {
+            m = 30;
+          }
+        }
+    },1000);
   }
 
-  incrementCounter() {
-    this.sessionTime++;
+
+  extraZero(val) {
+    let valString = val + "";
+    if (valString.length < 2) {
+      return "0" + valString;
+    } else {
+      return valString;
+    }
   }
 
-  decrementCounter() {
-    this.sessionTime--;
-  }
 
 
   incrementSession() {
@@ -53,9 +65,9 @@ class Timer {
     }
   }
 
-  getSessionTime() {
-    return this.sessionTime;
-  }
+//  getSessionTime() {
+//    return this.sessionTime;
+//  }
 
 
 
