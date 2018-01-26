@@ -23,8 +23,6 @@ document.getElementById("session-plus").onclick = () => {
   document.getElementById("session-num").innerHTML = timer.sessionNum;
 }
 
-
 document.getElementById("time-window").onclick = () => {
-  timer.reduceTime();
-};
-//clickEvent.onclick =
+    timer.reduceTime();
+}
