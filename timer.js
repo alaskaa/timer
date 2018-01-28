@@ -1,23 +1,29 @@
 class Timer {
 
   constructor() {
-    this.breakNum = 5;
     this.sessionNum = 30;
 
-    this.minutes = 29;
-    this.seconds = 59;
+    this.minutes = 30;
+    this.seconds;
     this.ticking = false;
+    this.running = false;
   }
 
   reduceTime() {
+    this.running = true;
+    console.log(this.running);
+    this.minutes = this.minutes-1;
+    this.seconds = 59;
     let m = this.minutes;
     let s = this.seconds;
     var interval;
 
     if(this.ticking === false) {
+      console.log(this.ticking);
       this.ticking = true;
       console.log(this.ticking);
       clearInterval(interval);
+
       interval = setInterval(function(){
         document.getElementById("time-window").innerHTML = m + ":" + s;
         s--;
@@ -29,12 +35,14 @@ class Timer {
           }
         }
       },1000);
+      console.log("Heyoooo" + this.ticking);
     } else if (this.ticking === true) {
       clearInterval(interval);
       this.ticking = false;
       console.log("This is in the else: " + this.ticking);
       document.getElementById("time-window").innerHTML = "30:00";
     }
+    return this.running;
   }
 
 
@@ -63,26 +71,16 @@ class Timer {
     }
   }
 
-  incrementBreak() {
-    // increments break time by 1
-    if (this.breakNum >= 0) {
-      this.breakNum++;
+  incrementMinutes() {
+    if(this.running === false) {
+    this.minutes++;
     }
   }
 
-  decrementBreak() {
-    // decrements break time by 1
-    if (this.breakNum >= 1) {
-      this.breakNum--;
+  decrementMinutes() {
+    if(this.running === false) {
+    this.minutes--;
     }
   }
-
-//  getSessionTime() {
-//    return this.sessionTime;
-//  }
-
-
-
-
 
 }
