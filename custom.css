@@ -43,9 +43,9 @@ h1 {
 .wrapper {
   display: grid;
   margin: auto;
-  width: 160px;
-  grid-template-columns: 50px 50px 50px;
-  grid-template-rows: repeat(2, 50px);
+  width: 190px;
+  grid-template-columns: 60px 60px 60px;
+  grid-template-rows: repeat(1, 50px);
   grid-gap: 5px;
   padding-top: 20px;
   padding-bottom: 20px;

@@ -4,45 +4,39 @@ class Timer {
     this.sessionNum = 30;
 
     this.minutes = 30;
-    this.seconds;
+    this.seconds = 0;
     this.ticking = false;
     this.running = false;
   }
 
   reduceTime() {
-    this.running = true;
-    console.log(this.running);
-    this.minutes = this.minutes-1;
-    this.seconds = 59;
+    //this.minutes = this.minutes-1;
+    //this.seconds = 59;
+
     let m = this.minutes;
     let s = this.seconds;
-    var interval;
 
-    if(this.ticking === false) {
-      console.log(this.ticking);
-      this.ticking = true;
-      console.log(this.ticking);
-      clearInterval(interval);
+    var interval = setInterval(function(){
 
-      interval = setInterval(function(){
-        document.getElementById("time-window").innerHTML = m + ":" + s;
-        s--;
-        if(s == -1) {
-          m--;
-          s = 59;
-          if (m == 0) {
-            m = 30;
-          }
-        }
+      document.getElementById("time-window").innerHTML = m + ":" + s;
+      s--;
+      if(s == -1) {
+        m--;
+        s = 59;
+      }
+      else if (s == 0 && m == 0)  {
+          console.log("hello");
+          clearTime();
+          let audio = document.getElementById("beep");
+          audio.play();
+      }
+      //this.ticking = true;
       },1000);
-      console.log("Heyoooo" + this.ticking);
-    } else if (this.ticking === true) {
-      clearInterval(interval);
-      this.ticking = false;
-      console.log("This is in the else: " + this.ticking);
-      document.getElementById("time-window").innerHTML = "30:00";
-    }
-    return this.running;
+    window.interval = interval;
+   }
+
+  clearTime() {
+    clearInterval(interval);
   }
 
 
@@ -51,11 +45,9 @@ class Timer {
     if (valString.length < 2) {
       return "0" + valString;
     } else {
-      return valString;
+      //return valString;
     }
   }
-
-
 
   incrementSession() {
     // increments the session by 1
