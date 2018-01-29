@@ -1,6 +1,7 @@
 const timer = new Timer();
 
 var clicked = false;
+var stoppable = true;
 var addersActive = true;
 
 document.getElementById("session-num").innerHTML = timer.sessionNum;
@@ -26,14 +27,15 @@ document.getElementById("session-plus").onclick = () => {
 
 
 document.getElementById("start").onclick = () => {
-  if(clicked === false) {
+  if(clicked === false && stoppable === true) {
     timer.reduceTime();
     clicked = true;
     document.getElementById("start").innerHTML = "Stop";
-  } else if(clicked === true) {
+  } else if(clicked === true && stoppable === true) {
     timer.clearTime();
     clicked = false;
     addersActive = false;
+    stoppable = false;
   }
 }
 
@@ -44,5 +46,6 @@ document.getElementById("reset").onclick = () => {
     document.getElementById("start").innerHTML = "Start";
     document.getElementById("time-window").innerHTML = "30";
     addersActive = true;
+    stoppable = true;
   }
 }
