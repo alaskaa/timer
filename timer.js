@@ -25,7 +25,6 @@ class Timer {
         clearInterval(interval);
       }
       var sec;
-      console.log(String(s).length);
       if(String(s).length == 1) {
         sec = "0"+s;
       } else {
