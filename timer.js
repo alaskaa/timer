@@ -31,7 +31,7 @@ class Timer {
         sec = s;
       }
       document.getElementById("time-window").innerHTML = m + ":" + sec;
-    },100);
+    },1000);
     window.interval = interval;
    }
 
